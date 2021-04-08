@@ -68,6 +68,9 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Yarn 2
+.yarn
+
 # dotenv environment variables file
 .env
 .env.test
@@ -102,3 +105,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# TSC ouput
+build
