@@ -10,15 +10,17 @@
     "packman": "yarn@2.4.1",
     "scripts": {
         "preinstall": "node ./scripts/hintYarn.js",
-        "start": "node ./build/index.js",
-        "dev": "nodemon index.ts",
+        "start": "dotenv node ./build/index.js",
+        "dev": "dotenv nodemon index.ts",
         "build": "tsc --project ./",
         "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
         "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
     },
     "dependencies": {
-        "@secretarium/connector": "0.9.2",
-        "express": "4.17.1"
+        "@secretarium/connector": "0.10.0",
+        "dotenv-cli": "4.0.0",
+        "express": "4.17.1",
+        "ws": "7.4.4"
     },
     "devDependencies": {
         "@types/express": "4.17.11",
