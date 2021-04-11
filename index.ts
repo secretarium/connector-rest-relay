@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import router from './src/router';
 import connector from './src/connector';
 
@@ -6,6 +7,7 @@ const app = express();
 const PORT = 8000;
 
 connector.initialize().then(() => {
+    app.use(bodyParser.json());
     app.use(router);
     app.get('*', (req, res) => res.send('Secretarium Connector Relay'));
     app.listen(PORT, () => {
