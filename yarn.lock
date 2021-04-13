@@ -90,11 +90,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@secretarium/connector-rest-relay@workspace:."
   dependencies:
-    "@secretarium/connector": 0.10.0
+    "@secretarium/connector": 0.10.2
     "@types/express": 4.17.11
     "@types/node": 14.14.37
     "@typescript-eslint/eslint-plugin": 4.21.0
     "@typescript-eslint/parser": 4.21.0
+    dotenv: 8.2.0
     dotenv-cli: 4.0.0
     eslint: 7.23.0
     eslint-plugin-import: 2.22.1
@@ -107,12 +108,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@secretarium/connector@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@secretarium/connector@npm:0.10.0"
+"@secretarium/connector@npm:0.10.2":
+  version: 0.10.2
+  resolution: "@secretarium/connector@npm:0.10.2"
   peerDependencies:
     ws: "*"
-  checksum: a53717415ac4175284a17a8e9001f6324d5ac9ceef64145fb8c8c5684333ad75f7ac492ae491db3284e53b37960712f654e8568865f64c730f9026b9b8a249ab
+  checksum: e2ee8c6cfa08b93e5d001231732905a4a8aed7c402f753ab614a9d3df68e5d89812734778abb7818705aabc712c2275f75cb5ea28042d627b8b7139064c18110
   languageName: node
   linkType: hard
 
@@ -1113,7 +1114,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.1.0":
+"dotenv@npm:8.2.0, dotenv@npm:^8.1.0":
   version: 8.2.0
   resolution: "dotenv@npm:8.2.0"
   checksum: 96ed583af633ad50c008639510f4bc4e0d34e61c8cc2d015f903c865eef3e5e3f8226d09a20088d113a1cda6313b197f70d991818dc9c0b9ec6acf327f87569e

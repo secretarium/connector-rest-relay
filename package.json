@@ -17,7 +17,7 @@
         "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
     },
     "dependencies": {
-        "@secretarium/connector": "0.10.0",
+        "@secretarium/connector": "0.10.2",
         "dotenv-cli": "4.0.0",
         "express": "4.17.1",
         "ws": "7.4.4"
