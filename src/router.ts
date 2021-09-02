@@ -1,21 +1,24 @@
 import express, { Request, Response } from 'express';
-import connector from './connector';
+import { microFactory } from './connector';
+
 const router = express.Router();
 
 const proxy = async (req: Request, res: Response): Promise<void> => {
     try {
-        const requestId = (new Date().getTime() * Math.random()).toString(16).slice(0, 8);
-        const request = await connector.request(req.params.dcapp, req.params.command, req.body ?? {}, requestId);
-        request.onResult(result => {
-            const shouldBail = result && typeof result !== 'string' && result.email !== undefined;
-            if (!shouldBail)
-                res.json(result);
-        });
-        request.onError(result => {
-            res.status(400);
-            res.json({ errorCode: result });
-        });
-        request.send().catch(() => {
+        (await microFactory(req.params.dcapp, req.params.command, req.body)({
+            onResult: (result: any) => {
+                const shouldBail = result && typeof result !== 'string' && result.email !== undefined;
+                if (!shouldBail)
+                    res.json(result);
+            },
+            onExecuted: () => {
+                res.json({ success: true });
+            },
+            onError: (result: any) => {
+                res.status(400);
+                res.json({ error: result });
+            }
+        })).send().catch(() => {
             // Handle dangling errors
         });
     } catch (e) {

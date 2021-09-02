@@ -9,10 +9,13 @@ const PORT = 8000;
 connector.initialize().then(() => {
     app.use(bodyParser.json());
     app.use(router);
-    app.get('*', (req, res) => res.send('Secretarium Connector Relay'));
+    app.get('*', (req, res) => {
+        res.status(400);
+        res.json({ error: 'Invalid request' });
+    });
     app.listen(PORT, () => {
         console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
     });
 }).catch(error => {
-    console.error(`🔥[server]: An error occured (${error})`);
+    console.error(`🔥[server]: An error occurred (${error})`);
 });
