@@ -7,7 +7,7 @@
     "author": "Florian Guitton <florian@secretarium.com>",
     "license": "MIT",
     "private": true,
-    "packman": "yarn@2.4.1",
+    "packman": "yarn@3.0.1",
     "scripts": {
         "preinstall": "node ./scripts/hintYarn.js",
         "start": "dotenv node ./build/index.js",
@@ -17,22 +17,22 @@
         "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
     },
     "dependencies": {
-        "@secretarium/connector": "0.10.2",
+        "@secretarium/connector": "0.11.1",
         "dotenv-cli": "4.0.0",
         "express": "4.17.1",
-        "ws": "7.4.4"
+        "ws": "8.2.1"
     },
     "devDependencies": {
-        "@types/express": "4.17.11",
-        "@types/node": "14.14.37",
-        "@typescript-eslint/eslint-plugin": "4.21.0",
-        "@typescript-eslint/parser": "4.21.0",
-        "dotenv": "8.2.0",
-        "eslint": "7.23.0",
-        "eslint-plugin-import": "2.22.1",
-        "eslint-plugin-jest": "24.3.4",
-        "nodemon": "2.0.7",
-        "ts-node": "9.1.1",
-        "typescript": "4.2.4"
+        "@types/express": "4.17.13",
+        "@types/node": "16.7.10",
+        "@typescript-eslint/eslint-plugin": "4.30.0",
+        "@typescript-eslint/parser": "4.30.0",
+        "dotenv": "10.0.0",
+        "eslint": "7.32.0",
+        "eslint-plugin-import": "2.24.2",
+        "eslint-plugin-jest": "24.4.0",
+        "nodemon": "2.0.12",
+        "ts-node": "10.2.1",
+        "typescript": "4.4.2"
     }
 }
