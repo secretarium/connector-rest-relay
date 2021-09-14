@@ -14,7 +14,7 @@ connector.initialize().then(() => {
         res.json({ error: 'Invalid request' });
     });
     app.listen(PORT, () => {
-        console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+        console.log(`⚡️[server]: Proxy is running at http://localhost:${PORT}`);
     });
 }).catch(error => {
     console.error(`🔥[server]: An error occurred (${error})`);
