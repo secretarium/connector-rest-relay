@@ -45,12 +45,15 @@ const connector = {
                         if (newState === ConnectionState.closed)
                             reconnectionHanlder();
                     });
-                    return request.onError(error => {
+                    request.onError(error => {
                         reconnectionHanlder(error);
-                    }).send().catch(error => {
-                        reconnectionHanlder(error);
-                        return error;
-                    });
+                    }).send()
+                        .then(() => {/* NOOP */ })
+                        .catch(error => {
+                            reconnectionHanlder(error);
+                            return error;
+                        });
+                    return Promise.resolve();
                 }).catch(error => {
                     reconnectionHanlder(error);
                     return error;
