@@ -1,7 +1,7 @@
 {
     "name": "@secretarium/connector-rest-relay",
     "description": "Example relay application for Secretarium Connector",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "index.js",
     "repository": "https://github.com/secretarium/connector-rest-relay.git",
     "author": "Florian Guitton <florian@secretarium.com>",
